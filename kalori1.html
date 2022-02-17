@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+          display: inline-block;
+          width: 80px;
+          height: 25px;
+        }
+        button {
+          height:30px;
+          margin: 5px 0px;
+        }
+        fieldset {
+          display: inline-block;
+        }
+        #errMsg {
+          color: red;
+        }
+        #frm {
+          float: left;
+          width: 30%;
+        }
+        #imgSec {
+          float: left;
+          padding: 5px 0px;
+          border-left: 3px solid darkblue;
+        }
+      </style>
+       <script type="text/kalori1" src="js/kalori1.js"></script>
+</head>
+<body>
+    <div id="title"><h3>BMI Calculator</h3></div>
+    <section id="frm">
+      <form name="bmiForm" onsubmit="return false;">
+        <fieldset>
+          <legend>Enter your Details:</legend>
+          <label for="user">Name:</label>
+          <input type="text" id="user" size="25" required> <br />
+          <label for="gender">Gender:</label>
+          <input type="radio" id="rbMale" name="gender"> Male 
+          <input type="radio" id="rbFemale" name="gender">Female  <br />
+          <label for="age">Age:</label>
+          <input type="number" id="age" size="10" required> <br />
+          <label for="weight">Weight(kg):</label> 
+          <input type="number" id="weight" size="10" required> <br />
+          <label for="height">Height(cm):</label>
+          <input type="number" id="height" size="10" required> <br />
+          <div id="errMsg"></div>
+        </fieldset>
+        <br>
+        <button onclick="calculate()">Calculate BMI</button>
+        <button type="reset" onclick="clearErr()">Reset</button>
+        <br>
+        <fieldset>
+          <legend>Result:</legend>
+          <label for="bmr">Your BMR: </label>
+          <input type="text" name="bmr" id="bmr" size="18" readonly><br />
+          <label for="bmi">Your BMI: </label>
+          <input type="text" name="bmi" id="bmi" size="10" readonly><br />
+          <label for="meaning">This Means: </label>
+          <input type="text" name="meaning" id="meaning" size="25" readonly><br/>
+        </fieldset>
+      </section>
+      <section id="imgSec">
+        <img id="img" src="" height="250px">     
+      </section>
+    </form>
+</body>
+</html>
